@@ -1,7 +1,7 @@
 package com.th.tms.entity;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.Objects;
 
 @Entity
@@ -14,7 +14,8 @@ public class SystemStrdicItemEntity {
     private String dictItemDesc;
     private Integer dictItemOrder;
     private String comId;
-    private Timestamp uTime;
+    private Date uTime;
+    private Integer uDelete;
 
     @Id
     @Column(name = "DICT_ID")
@@ -78,12 +79,20 @@ public class SystemStrdicItemEntity {
 
     @Basic
     @Column(name = "U_TIME")
-    public Timestamp getuTime() {
+    public Date getuTime() {
         return uTime;
     }
 
-    public void setuTime(Timestamp uTime) {
+    public void setuTime(Date uTime) {
         this.uTime = uTime;
+    }
+
+    public Integer getuDelete() {
+        return uDelete;
+    }
+
+    public void setuDelete(Integer uDelete) {
+        this.uDelete = uDelete;
     }
 
     @Override

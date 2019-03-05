@@ -1,8 +1,8 @@
 package com.th.tms.entity;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.sql.Timestamp;
+
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -12,19 +12,19 @@ public class TmsSignDetailedEntity {
     private String signId;
     private String goodsId;
     private String goodsName;
-    private BigDecimal signVol;
-    private BigDecimal signWeight;
-    private BigDecimal signNum;
-    private BigDecimal signWeightfeeT;
-    private BigDecimal refuseSignNum;
+    private Double signVol;
+    private Double signWeight;
+    private Double signNum;
+    private Double signWeightfeeT;
+    private Double refuseSignNum;
     private String refuseReason;
     private String remarks;
     private String updName;
-    private Timestamp updDate;
-    private Timestamp addDate;
+    private Date updDate;
+    private Date addDate;
     private String addName;
     private String addUserid;
-    private Timestamp uTime;
+    private Date uTime;
     private Integer uDelete;
 
     @Id
@@ -69,51 +69,51 @@ public class TmsSignDetailedEntity {
 
     @Basic
     @Column(name = "SIGN_VOL")
-    public BigDecimal getSignVol() {
+    public Double getSignVol() {
         return signVol;
     }
 
-    public void setSignVol(BigDecimal signVol) {
+    public void setSignVol(Double signVol) {
         this.signVol = signVol;
     }
 
     @Basic
     @Column(name = "SIGN_WEIGHT")
-    public BigDecimal getSignWeight() {
+    public Double getSignWeight() {
         return signWeight;
     }
 
-    public void setSignWeight(BigDecimal signWeight) {
+    public void setSignWeight(Double signWeight) {
         this.signWeight = signWeight;
     }
 
     @Basic
     @Column(name = "SIGN_NUM")
-    public BigDecimal getSignNum() {
+    public Double getSignNum() {
         return signNum;
     }
 
-    public void setSignNum(BigDecimal signNum) {
+    public void setSignNum(Double signNum) {
         this.signNum = signNum;
     }
 
     @Basic
     @Column(name = "SIGN_WEIGHTFEE_T")
-    public BigDecimal getSignWeightfeeT() {
+    public Double getSignWeightfeeT() {
         return signWeightfeeT;
     }
 
-    public void setSignWeightfeeT(BigDecimal signWeightfeeT) {
+    public void setSignWeightfeeT(Double signWeightfeeT) {
         this.signWeightfeeT = signWeightfeeT;
     }
 
     @Basic
     @Column(name = "REFUSE_SIGN_NUM")
-    public BigDecimal getRefuseSignNum() {
+    public Double getRefuseSignNum() {
         return refuseSignNum;
     }
 
-    public void setRefuseSignNum(BigDecimal refuseSignNum) {
+    public void setRefuseSignNum(Double refuseSignNum) {
         this.refuseSignNum = refuseSignNum;
     }
 
@@ -149,21 +149,21 @@ public class TmsSignDetailedEntity {
 
     @Basic
     @Column(name = "UPD_DATE")
-    public Timestamp getUpdDate() {
+    public Date getUpdDate() {
         return updDate;
     }
 
-    public void setUpdDate(Timestamp updDate) {
+    public void setUpdDate(Date updDate) {
         this.updDate = updDate;
     }
 
     @Basic
     @Column(name = "ADD_DATE")
-    public Timestamp getAddDate() {
+    public Date getAddDate() {
         return addDate;
     }
 
-    public void setAddDate(Timestamp addDate) {
+    public void setAddDate(Date addDate) {
         this.addDate = addDate;
     }
 
@@ -189,11 +189,11 @@ public class TmsSignDetailedEntity {
 
     @Basic
     @Column(name = "U_TIME")
-    public Timestamp getuTime() {
+    public Date getuTime() {
         return uTime;
     }
 
-    public void setuTime(Timestamp uTime) {
+    public void setuTime(Date uTime) {
         this.uTime = uTime;
     }
 

@@ -10,6 +10,7 @@ public class TmsTransDetailedEntity {
     private String id;
     private String transId;
     private String goodsId;
+    private String goodsName;
     private Double goodsVol;
     private Double goodsWeight;
     private Double goodsNum;
@@ -171,6 +172,14 @@ public class TmsTransDetailedEntity {
 
     public void setuDelete(Integer uDelete) {
         this.uDelete = uDelete;
+    }
+
+    public String getGoodsName() {
+        return goodsName;
+    }
+
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName;
     }
 
     @Override

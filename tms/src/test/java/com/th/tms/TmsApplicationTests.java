@@ -6,7 +6,10 @@ import com.th.tms.entity.TmsTransDetailedEntity;
 import com.th.tms.entity.TmsTransEntity;
 import com.th.tms.repository.TmsTransDetailedRepository;
 import com.th.tms.repository.TmsTransRepository;
+import com.th.tms.service.TmsDispatchService;
+import com.th.tms.service.impl.TmsDispatchServiceImpl;
 import com.th.tms.service.impl.TmsTransServiceImpl;
+import com.th.tms.util.DicUtil;
 import com.th.tms.util.UUIDGenerator;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -21,6 +24,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 @RunWith(SpringRunner.class)
@@ -33,6 +37,10 @@ public class TmsApplicationTests {
 	private TmsTransDetailedRepository tmsTransDetailedRepository;
 	@Autowired
 	TmsTransRepository tmsTransRepository;
+	@Autowired
+	TmsDispatchServiceImpl tmsDispatchService;
+	@Autowired
+	DicUtil dicUtil;
 	@Test
 	public void contextLoads() {
 		Random random = new Random();
@@ -125,5 +133,18 @@ public class TmsApplicationTests {
 
 	}
 
+	@Test
+	public void DicUtilTest(){
+
+		//Map<String,String> map = dicUtil.getDictStr("TG_STATE",1);
+		//System.out.println("map:" + map.toString());
+	}
+
+	@Test
+	public void saveTransDispatchTest(){
+
+		//tmsDispatchService.saveTransDispatch("c94e78cd42614bf0bf0765a279eb87c8");
+		tmsDispatchService.saveTransDepart("e9a2ce8e99874edb89dec6505cac02f4", "2019-03-05 10:12:12");
+	}
 
 }

@@ -1,8 +1,7 @@
 package com.th.tms.entity;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -11,17 +10,17 @@ public class TmsTransDetailedEntity {
     private String id;
     private String transId;
     private String goodsId;
-    private BigDecimal goodsVol;
-    private BigDecimal goodsWeight;
-    private BigDecimal goodsNum;
-    private BigDecimal goodsWeightfeeT;
+    private Double goodsVol;
+    private Double goodsWeight;
+    private Double goodsNum;
+    private Double goodsWeightfeeT;
     private String remarks;
     private String updName;
-    private Timestamp updDate;
-    private Timestamp addDate;
+    private Date updDate;
+    private Date addDate;
     private String addName;
     private String addUserid;
-    private Timestamp uTime;
+    private Date uTime;
     private Integer uDelete;
 
     @Id
@@ -56,41 +55,41 @@ public class TmsTransDetailedEntity {
 
     @Basic
     @Column(name = "GOODS_VOL")
-    public BigDecimal getGoodsVol() {
+    public Double getGoodsVol() {
         return goodsVol;
     }
 
-    public void setGoodsVol(BigDecimal goodsVol) {
+    public void setGoodsVol(Double goodsVol) {
         this.goodsVol = goodsVol;
     }
 
     @Basic
     @Column(name = "GOODS_WEIGHT")
-    public BigDecimal getGoodsWeight() {
+    public Double getGoodsWeight() {
         return goodsWeight;
     }
 
-    public void setGoodsWeight(BigDecimal goodsWeight) {
+    public void setGoodsWeight(Double goodsWeight) {
         this.goodsWeight = goodsWeight;
     }
 
     @Basic
     @Column(name = "GOODS_NUM")
-    public BigDecimal getGoodsNum() {
+    public Double getGoodsNum() {
         return goodsNum;
     }
 
-    public void setGoodsNum(BigDecimal goodsNum) {
+    public void setGoodsNum(Double goodsNum) {
         this.goodsNum = goodsNum;
     }
 
     @Basic
     @Column(name = "GOODS_WEIGHTFEE_T")
-    public BigDecimal getGoodsWeightfeeT() {
+    public Double getGoodsWeightfeeT() {
         return goodsWeightfeeT;
     }
 
-    public void setGoodsWeightfeeT(BigDecimal goodsWeightfeeT) {
+    public void setGoodsWeightfeeT(Double goodsWeightfeeT) {
         this.goodsWeightfeeT = goodsWeightfeeT;
     }
 
@@ -116,21 +115,21 @@ public class TmsTransDetailedEntity {
 
     @Basic
     @Column(name = "UPD_DATE")
-    public Timestamp getUpdDate() {
+    public Date getUpdDate() {
         return updDate;
     }
 
-    public void setUpdDate(Timestamp updDate) {
+    public void setUpdDate(Date updDate) {
         this.updDate = updDate;
     }
 
     @Basic
     @Column(name = "ADD_DATE")
-    public Timestamp getAddDate() {
+    public Date getAddDate() {
         return addDate;
     }
 
-    public void setAddDate(Timestamp addDate) {
+    public void setAddDate(Date addDate) {
         this.addDate = addDate;
     }
 
@@ -156,11 +155,11 @@ public class TmsTransDetailedEntity {
 
     @Basic
     @Column(name = "U_TIME")
-    public Timestamp getuTime() {
+    public Date getuTime() {
         return uTime;
     }
 
-    public void setuTime(Timestamp uTime) {
+    public void setuTime(Date uTime) {
         this.uTime = uTime;
     }
 

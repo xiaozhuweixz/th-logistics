@@ -1,7 +1,6 @@
 package com.th.tms.service.impl;
 
 
-import com.th.tms.entity.BasicCarrierEntity;
 import com.th.tms.repository.BasicCarrierRepository;
 import com.th.tms.repository.impl.BasicCarrierRepositoryImpl;
 import com.th.tms.service.BasicCarrierService;
@@ -15,9 +14,4 @@ public class BasicCarrierServiceImpl implements BasicCarrierService {
     private BasicCarrierRepositoryImpl basicCarrierRepositoryImpl;
 
 
-
-    @Override
-    public void save(BasicCarrierEntity basicCarrier) {
-        basicCarrierRepository.save(basicCarrier);
-    }
 }

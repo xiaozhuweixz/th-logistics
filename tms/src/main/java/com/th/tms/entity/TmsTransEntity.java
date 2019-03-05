@@ -1,8 +1,7 @@
 package com.th.tms.entity;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -39,33 +38,33 @@ public class TmsTransEntity {
     private String transEAddr;
     private String transEReciever;
     private String transERecieverPhone;
-    private BigDecimal transDistance;
-    private BigDecimal transVol;
-    private BigDecimal transWeight;
-    private BigDecimal transWeightfee;
-    private BigDecimal transNum;
-    private BigDecimal transCostExp;
-    private BigDecimal transIncomeExp;
-    private BigDecimal transCost;
-    private BigDecimal transIncome;
-    private BigDecimal transCostPre;
-    private Timestamp transArrtimeExp;
-    private Timestamp transDepartExp;
-    private Timestamp transReachExp;
-    private Timestamp transSignExp;
-    private Timestamp transReceiptExp;
-    private Timestamp transArrtime;
-    private Timestamp transDepart;
-    private Timestamp transReach;
-    private Timestamp transSign;
-    private Timestamp transReceipt;
+    private Double transDistance;
+    private Double transVol;
+    private Double transWeight;
+    private Double transWeightfee;
+    private Double transNum;
+    private Double transCostExp;
+    private Double transIncomeExp;
+    private Double transCost;
+    private Double transIncome;
+    private Double transCostPre;
+    private Date transArrtimeExp;
+    private Date transDepartExp;
+    private Date transReachExp;
+    private Date transSignExp;
+    private Date transReceiptExp;
+    private Date transArrtime;
+    private Date transDepart;
+    private Date transReach;
+    private Date transSign;
+    private Date transReceipt;
     private String transSignMemo;
     private String transMemo;
     private String transWeightUnit;
-    private BigDecimal transWeightT;
-    private BigDecimal transWeightfeeT;
-    private BigDecimal transIncomeTax;
-    private BigDecimal transPayTax;
+    private Double transWeightT;
+    private Double transWeightfeeT;
+    private Double transIncomeTax;
+    private Double transPayTax;
     private String fscId;
     private String fmscId;
     private Integer transIsPhoto;
@@ -76,10 +75,10 @@ public class TmsTransEntity {
     private String relationId;
     private String trailerCode;
     private String updName;
-    private Timestamp updDate;
+    private Date updDate;
     private Integer uDelete;
-    private Timestamp uTime;
-    private Timestamp addDate;
+    private Date uTime;
+    private Date addDate;
     private String addName;
     private String addUserid;
 
@@ -395,201 +394,201 @@ public class TmsTransEntity {
 
     @Basic
     @Column(name = "TRANS_DISTANCE")
-    public BigDecimal getTransDistance() {
+    public Double getTransDistance() {
         return transDistance;
     }
 
-    public void setTransDistance(BigDecimal transDistance) {
+    public void setTransDistance(Double transDistance) {
         this.transDistance = transDistance;
     }
 
     @Basic
     @Column(name = "TRANS_VOL")
-    public BigDecimal getTransVol() {
+    public Double getTransVol() {
         return transVol;
     }
 
-    public void setTransVol(BigDecimal transVol) {
+    public void setTransVol(Double transVol) {
         this.transVol = transVol;
     }
 
     @Basic
     @Column(name = "TRANS_WEIGHT")
-    public BigDecimal getTransWeight() {
+    public Double getTransWeight() {
         return transWeight;
     }
 
-    public void setTransWeight(BigDecimal transWeight) {
+    public void setTransWeight(Double transWeight) {
         this.transWeight = transWeight;
     }
 
     @Basic
     @Column(name = "TRANS_WEIGHTFEE")
-    public BigDecimal getTransWeightfee() {
+    public Double getTransWeightfee() {
         return transWeightfee;
     }
 
-    public void setTransWeightfee(BigDecimal transWeightfee) {
+    public void setTransWeightfee(Double transWeightfee) {
         this.transWeightfee = transWeightfee;
     }
 
     @Basic
     @Column(name = "TRANS_NUM")
-    public BigDecimal getTransNum() {
+    public Double getTransNum() {
         return transNum;
     }
 
-    public void setTransNum(BigDecimal transNum) {
+    public void setTransNum(Double transNum) {
         this.transNum = transNum;
     }
 
     @Basic
     @Column(name = "TRANS_COST_EXP")
-    public BigDecimal getTransCostExp() {
+    public Double getTransCostExp() {
         return transCostExp;
     }
 
-    public void setTransCostExp(BigDecimal transCostExp) {
+    public void setTransCostExp(Double transCostExp) {
         this.transCostExp = transCostExp;
     }
 
     @Basic
     @Column(name = "TRANS_INCOME_EXP")
-    public BigDecimal getTransIncomeExp() {
+    public Double getTransIncomeExp() {
         return transIncomeExp;
     }
 
-    public void setTransIncomeExp(BigDecimal transIncomeExp) {
+    public void setTransIncomeExp(Double transIncomeExp) {
         this.transIncomeExp = transIncomeExp;
     }
 
     @Basic
     @Column(name = "TRANS_COST")
-    public BigDecimal getTransCost() {
+    public Double getTransCost() {
         return transCost;
     }
 
-    public void setTransCost(BigDecimal transCost) {
+    public void setTransCost(Double transCost) {
         this.transCost = transCost;
     }
 
     @Basic
     @Column(name = "TRANS_INCOME")
-    public BigDecimal getTransIncome() {
+    public Double getTransIncome() {
         return transIncome;
     }
 
-    public void setTransIncome(BigDecimal transIncome) {
+    public void setTransIncome(Double transIncome) {
         this.transIncome = transIncome;
     }
 
     @Basic
     @Column(name = "TRANS_COST_PRE")
-    public BigDecimal getTransCostPre() {
+    public Double getTransCostPre() {
         return transCostPre;
     }
 
-    public void setTransCostPre(BigDecimal transCostPre) {
+    public void setTransCostPre(Double transCostPre) {
         this.transCostPre = transCostPre;
     }
 
     @Basic
     @Column(name = "TRANS_ARRTIME_EXP")
-    public Timestamp getTransArrtimeExp() {
+    public Date getTransArrtimeExp() {
         return transArrtimeExp;
     }
 
-    public void setTransArrtimeExp(Timestamp transArrtimeExp) {
+    public void setTransArrtimeExp(Date transArrtimeExp) {
         this.transArrtimeExp = transArrtimeExp;
     }
 
     @Basic
     @Column(name = "TRANS_DEPART_EXP")
-    public Timestamp getTransDepartExp() {
+    public Date getTransDepartExp() {
         return transDepartExp;
     }
 
-    public void setTransDepartExp(Timestamp transDepartExp) {
+    public void setTransDepartExp(Date transDepartExp) {
         this.transDepartExp = transDepartExp;
     }
 
     @Basic
     @Column(name = "TRANS_REACH_EXP")
-    public Timestamp getTransReachExp() {
+    public Date getTransReachExp() {
         return transReachExp;
     }
 
-    public void setTransReachExp(Timestamp transReachExp) {
+    public void setTransReachExp(Date transReachExp) {
         this.transReachExp = transReachExp;
     }
 
     @Basic
     @Column(name = "TRANS_SIGN_EXP")
-    public Timestamp getTransSignExp() {
+    public Date getTransSignExp() {
         return transSignExp;
     }
 
-    public void setTransSignExp(Timestamp transSignExp) {
+    public void setTransSignExp(Date transSignExp) {
         this.transSignExp = transSignExp;
     }
 
     @Basic
     @Column(name = "TRANS_RECEIPT_EXP")
-    public Timestamp getTransReceiptExp() {
+    public Date getTransReceiptExp() {
         return transReceiptExp;
     }
 
-    public void setTransReceiptExp(Timestamp transReceiptExp) {
+    public void setTransReceiptExp(Date transReceiptExp) {
         this.transReceiptExp = transReceiptExp;
     }
 
     @Basic
     @Column(name = "TRANS_ARRTIME")
-    public Timestamp getTransArrtime() {
+    public Date getTransArrtime() {
         return transArrtime;
     }
 
-    public void setTransArrtime(Timestamp transArrtime) {
+    public void setTransArrtime(Date transArrtime) {
         this.transArrtime = transArrtime;
     }
 
     @Basic
     @Column(name = "TRANS_DEPART")
-    public Timestamp getTransDepart() {
+    public Date getTransDepart() {
         return transDepart;
     }
 
-    public void setTransDepart(Timestamp transDepart) {
+    public void setTransDepart(Date transDepart) {
         this.transDepart = transDepart;
     }
 
     @Basic
     @Column(name = "TRANS_REACH")
-    public Timestamp getTransReach() {
+    public Date getTransReach() {
         return transReach;
     }
 
-    public void setTransReach(Timestamp transReach) {
+    public void setTransReach(Date transReach) {
         this.transReach = transReach;
     }
 
     @Basic
     @Column(name = "TRANS_SIGN")
-    public Timestamp getTransSign() {
+    public Date getTransSign() {
         return transSign;
     }
 
-    public void setTransSign(Timestamp transSign) {
+    public void setTransSign(Date transSign) {
         this.transSign = transSign;
     }
 
     @Basic
     @Column(name = "TRANS_RECEIPT")
-    public Timestamp getTransReceipt() {
+    public Date getTransReceipt() {
         return transReceipt;
     }
 
-    public void setTransReceipt(Timestamp transReceipt) {
+    public void setTransReceipt(Date transReceipt) {
         this.transReceipt = transReceipt;
     }
 
@@ -625,41 +624,41 @@ public class TmsTransEntity {
 
     @Basic
     @Column(name = "TRANS_WEIGHT_T")
-    public BigDecimal getTransWeightT() {
+    public Double getTransWeightT() {
         return transWeightT;
     }
 
-    public void setTransWeightT(BigDecimal transWeightT) {
+    public void setTransWeightT(Double transWeightT) {
         this.transWeightT = transWeightT;
     }
 
     @Basic
     @Column(name = "TRANS_WEIGHTFEE_T")
-    public BigDecimal getTransWeightfeeT() {
+    public Double getTransWeightfeeT() {
         return transWeightfeeT;
     }
 
-    public void setTransWeightfeeT(BigDecimal transWeightfeeT) {
+    public void setTransWeightfeeT(Double transWeightfeeT) {
         this.transWeightfeeT = transWeightfeeT;
     }
 
     @Basic
     @Column(name = "TRANS_INCOME_TAX")
-    public BigDecimal getTransIncomeTax() {
+    public Double getTransIncomeTax() {
         return transIncomeTax;
     }
 
-    public void setTransIncomeTax(BigDecimal transIncomeTax) {
+    public void setTransIncomeTax(Double transIncomeTax) {
         this.transIncomeTax = transIncomeTax;
     }
 
     @Basic
     @Column(name = "TRANS_PAY_TAX")
-    public BigDecimal getTransPayTax() {
+    public Double getTransPayTax() {
         return transPayTax;
     }
 
-    public void setTransPayTax(BigDecimal transPayTax) {
+    public void setTransPayTax(Double transPayTax) {
         this.transPayTax = transPayTax;
     }
 
@@ -765,11 +764,11 @@ public class TmsTransEntity {
 
     @Basic
     @Column(name = "UPD_DATE")
-    public Timestamp getUpdDate() {
+    public Date getUpdDate() {
         return updDate;
     }
 
-    public void setUpdDate(Timestamp updDate) {
+    public void setUpdDate(Date updDate) {
         this.updDate = updDate;
     }
 
@@ -785,21 +784,21 @@ public class TmsTransEntity {
 
     @Basic
     @Column(name = "U_TIME")
-    public Timestamp getuTime() {
+    public Date getuTime() {
         return uTime;
     }
 
-    public void setuTime(Timestamp uTime) {
+    public void setuTime(Date uTime) {
         this.uTime = uTime;
     }
 
     @Basic
     @Column(name = "ADD_DATE")
-    public Timestamp getAddDate() {
+    public Date getAddDate() {
         return addDate;
     }
 
-    public void setAddDate(Timestamp addDate) {
+    public void setAddDate(Date addDate) {
         this.addDate = addDate;
     }
 
@@ -907,5 +906,85 @@ public class TmsTransEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, transCustNo, transWaybillNo, transState, transType, custId, custName, shipperId, shipperName, recieverId, recieverName, carrierId, carrierName, truckCode, driverId, driverName, driverMobile, transBPro, transBCity, transBArea, transBZip, transBAddr, transBShipper, transBShipperPhone, transEPro, transECity, transEArea, transEZip, transEAddr, transEReciever, transERecieverPhone, transDistance, transVol, transWeight, transWeightfee, transNum, transCostExp, transIncomeExp, transCost, transIncome, transCostPre, transArrtimeExp, transDepartExp, transReachExp, transSignExp, transReceiptExp, transArrtime, transDepart, transReach, transSign, transReceipt, transSignMemo, transMemo, transWeightUnit, transWeightT, transWeightfeeT, transIncomeTax, transPayTax, fscId, fmscId, transIsPhoto, isException, exceptionText, exceptionState, relationNo, relationId, trailerCode, updName, updDate, uDelete, uTime, addDate, addName, addUserid);
+    }
+
+    @Override
+    public String toString() {
+        return "TmsTransEntity{" +
+                "id='" + id + '\'' +
+                ", transCustNo='" + transCustNo + '\'' +
+                ", transWaybillNo='" + transWaybillNo + '\'' +
+                ", transState='" + transState + '\'' +
+                ", transType='" + transType + '\'' +
+                ", custId='" + custId + '\'' +
+                ", custName='" + custName + '\'' +
+                ", shipperId='" + shipperId + '\'' +
+                ", shipperName='" + shipperName + '\'' +
+                ", recieverId='" + recieverId + '\'' +
+                ", recieverName='" + recieverName + '\'' +
+                ", carrierId='" + carrierId + '\'' +
+                ", carrierName='" + carrierName + '\'' +
+                ", truckCode='" + truckCode + '\'' +
+                ", driverId='" + driverId + '\'' +
+                ", driverName='" + driverName + '\'' +
+                ", driverMobile='" + driverMobile + '\'' +
+                ", transBPro='" + transBPro + '\'' +
+                ", transBCity='" + transBCity + '\'' +
+                ", transBArea='" + transBArea + '\'' +
+                ", transBZip='" + transBZip + '\'' +
+                ", transBAddr='" + transBAddr + '\'' +
+                ", transBShipper='" + transBShipper + '\'' +
+                ", transBShipperPhone='" + transBShipperPhone + '\'' +
+                ", transEPro='" + transEPro + '\'' +
+                ", transECity='" + transECity + '\'' +
+                ", transEArea='" + transEArea + '\'' +
+                ", transEZip='" + transEZip + '\'' +
+                ", transEAddr='" + transEAddr + '\'' +
+                ", transEReciever='" + transEReciever + '\'' +
+                ", transERecieverPhone='" + transERecieverPhone + '\'' +
+                ", transDistance=" + transDistance +
+                ", transVol=" + transVol +
+                ", transWeight=" + transWeight +
+                ", transWeightfee=" + transWeightfee +
+                ", transNum=" + transNum +
+                ", transCostExp=" + transCostExp +
+                ", transIncomeExp=" + transIncomeExp +
+                ", transCost=" + transCost +
+                ", transIncome=" + transIncome +
+                ", transCostPre=" + transCostPre +
+                ", transArrtimeExp=" + transArrtimeExp +
+                ", transDepartExp=" + transDepartExp +
+                ", transReachExp=" + transReachExp +
+                ", transSignExp=" + transSignExp +
+                ", transReceiptExp=" + transReceiptExp +
+                ", transArrtime=" + transArrtime +
+                ", transDepart=" + transDepart +
+                ", transReach=" + transReach +
+                ", transSign=" + transSign +
+                ", transReceipt=" + transReceipt +
+                ", transSignMemo='" + transSignMemo + '\'' +
+                ", transMemo='" + transMemo + '\'' +
+                ", transWeightUnit='" + transWeightUnit + '\'' +
+                ", transWeightT=" + transWeightT +
+                ", transWeightfeeT=" + transWeightfeeT +
+                ", transIncomeTax=" + transIncomeTax +
+                ", transPayTax=" + transPayTax +
+                ", fscId='" + fscId + '\'' +
+                ", fmscId='" + fmscId + '\'' +
+                ", transIsPhoto=" + transIsPhoto +
+                ", isException=" + isException +
+                ", exceptionText='" + exceptionText + '\'' +
+                ", exceptionState=" + exceptionState +
+                ", relationNo='" + relationNo + '\'' +
+                ", relationId='" + relationId + '\'' +
+                ", trailerCode='" + trailerCode + '\'' +
+                ", updName='" + updName + '\'' +
+                ", updDate=" + updDate +
+                ", uDelete=" + uDelete +
+                ", uTime=" + uTime +
+                ", addDate=" + addDate +
+                ", addName='" + addName + '\'' +
+                ", addUserid='" + addUserid + '\'' +
+                '}';
     }
 }

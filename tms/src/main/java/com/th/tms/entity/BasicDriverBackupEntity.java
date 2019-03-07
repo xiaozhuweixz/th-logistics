@@ -1,8 +1,8 @@
 package com.th.tms.entity;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.util.Date;
+
 import java.util.Objects;
 
 @Entity
@@ -42,16 +42,16 @@ public class BasicDriverBackupEntity {
     private String driverText;
     private Integer driverState;
     private String addName;
-    private Timestamp addDate;
+    private Date addDate;
     private String updName;
     private String comId;
     private String comPf;
     private String addUserid;
-    private Timestamp uTime;
+    private Date uTime;
     private Integer uDelete;
-    private Timestamp updDate;
+    private Date updDate;
     private Integer driverNum;
-    private Timestamp driverFirst;
+    private Date driverFirst;
     private String carrierName;
     private String driverPassword;
     private String driverSource;
@@ -400,11 +400,11 @@ public class BasicDriverBackupEntity {
 
     @Basic
     @Column(name = "ADD_DATE")
-    public Timestamp getAddDate() {
+    public Date getAddDate() {
         return addDate;
     }
 
-    public void setAddDate(Timestamp addDate) {
+    public void setAddDate(Date addDate) {
         this.addDate = addDate;
     }
 
@@ -450,11 +450,11 @@ public class BasicDriverBackupEntity {
 
     @Basic
     @Column(name = "U_TIME")
-    public Timestamp getuTime() {
+    public Date getuTime() {
         return uTime;
     }
 
-    public void setuTime(Timestamp uTime) {
+    public void setuTime(Date uTime) {
         this.uTime = uTime;
     }
 
@@ -470,11 +470,11 @@ public class BasicDriverBackupEntity {
 
     @Basic
     @Column(name = "UPD_DATE")
-    public Timestamp getUpdDate() {
+    public Date getUpdDate() {
         return updDate;
     }
 
-    public void setUpdDate(Timestamp updDate) {
+    public void setUpdDate(Date updDate) {
         this.updDate = updDate;
     }
 
@@ -490,11 +490,11 @@ public class BasicDriverBackupEntity {
 
     @Basic
     @Column(name = "DRIVER_FIRST")
-    public Timestamp getDriverFirst() {
+    public Date getDriverFirst() {
         return driverFirst;
     }
 
-    public void setDriverFirst(Timestamp driverFirst) {
+    public void setDriverFirst(Date driverFirst) {
         this.driverFirst = driverFirst;
     }
 

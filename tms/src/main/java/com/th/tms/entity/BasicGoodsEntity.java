@@ -1,9 +1,9 @@
 package com.th.tms.entity;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.sql.Date;
-import java.sql.Timestamp;
+
+import java.util.Date;
+
 import java.util.Objects;
 
 @Entity
@@ -19,25 +19,25 @@ public class BasicGoodsEntity {
     private String goodsEnName;
     private String goodsShortName;
     private String goodsBrand;
-    private BigDecimal goodsWeight;
-    private BigDecimal goodsVolume;
-    private BigDecimal goodsLength;
-    private BigDecimal goodsWidth;
-    private BigDecimal goodsHeight;
+    private Double goodsWeight;
+    private Double goodsVolume;
+    private Double goodsLength;
+    private Double goodsWidth;
+    private Double goodsHeight;
     private Integer goodsLevel;
     private String goodsUnit;
     private String ownerId;
     private String ownerName;
     private String goodsFirm;
-    private BigDecimal goodsPeriod;
-    private BigDecimal goodsInventory;
+    private Double goodsPeriod;
+    private Double goodsInventory;
     private String goodsQuality;
     private String goodsClass;
     private String goodsVal;
     private Integer temCotrol2;
     private String chemicals;
     private Date msdsEffectivedate;
-    private BigDecimal goodsArea;
+    private Double goodsArea;
     private String goodsText;
     private Integer goodsState;
     private String goodsPriority;
@@ -62,12 +62,12 @@ public class BasicGoodsEntity {
     private String skurotation1;
     private Integer goodsLimitNum;
     private String outStrategy;
-    private Timestamp uTime;
+    private Date uTime;
     private String addUserid;
-    private Timestamp addTime;
+    private Date addTime;
     private String addName;
     private String updUserid;
-    private Timestamp updTime;
+    private Date updTime;
     private String updName;
     private String comId;
     private String lot01;
@@ -199,51 +199,51 @@ public class BasicGoodsEntity {
 
     @Basic
     @Column(name = "GOODS_WEIGHT")
-    public BigDecimal getGoodsWeight() {
+    public Double getGoodsWeight() {
         return goodsWeight;
     }
 
-    public void setGoodsWeight(BigDecimal goodsWeight) {
+    public void setGoodsWeight(Double goodsWeight) {
         this.goodsWeight = goodsWeight;
     }
 
     @Basic
     @Column(name = "GOODS_VOLUME")
-    public BigDecimal getGoodsVolume() {
+    public Double getGoodsVolume() {
         return goodsVolume;
     }
 
-    public void setGoodsVolume(BigDecimal goodsVolume) {
+    public void setGoodsVolume(Double goodsVolume) {
         this.goodsVolume = goodsVolume;
     }
 
     @Basic
     @Column(name = "GOODS_LENGTH")
-    public BigDecimal getGoodsLength() {
+    public Double getGoodsLength() {
         return goodsLength;
     }
 
-    public void setGoodsLength(BigDecimal goodsLength) {
+    public void setGoodsLength(Double goodsLength) {
         this.goodsLength = goodsLength;
     }
 
     @Basic
     @Column(name = "GOODS_WIDTH")
-    public BigDecimal getGoodsWidth() {
+    public Double getGoodsWidth() {
         return goodsWidth;
     }
 
-    public void setGoodsWidth(BigDecimal goodsWidth) {
+    public void setGoodsWidth(Double goodsWidth) {
         this.goodsWidth = goodsWidth;
     }
 
     @Basic
     @Column(name = "GOODS_HEIGHT")
-    public BigDecimal getGoodsHeight() {
+    public Double getGoodsHeight() {
         return goodsHeight;
     }
 
-    public void setGoodsHeight(BigDecimal goodsHeight) {
+    public void setGoodsHeight(Double goodsHeight) {
         this.goodsHeight = goodsHeight;
     }
 
@@ -299,21 +299,21 @@ public class BasicGoodsEntity {
 
     @Basic
     @Column(name = "GOODS_PERIOD")
-    public BigDecimal getGoodsPeriod() {
+    public Double getGoodsPeriod() {
         return goodsPeriod;
     }
 
-    public void setGoodsPeriod(BigDecimal goodsPeriod) {
+    public void setGoodsPeriod(Double goodsPeriod) {
         this.goodsPeriod = goodsPeriod;
     }
 
     @Basic
     @Column(name = "GOODS_INVENTORY")
-    public BigDecimal getGoodsInventory() {
+    public Double getGoodsInventory() {
         return goodsInventory;
     }
 
-    public void setGoodsInventory(BigDecimal goodsInventory) {
+    public void setGoodsInventory(Double goodsInventory) {
         this.goodsInventory = goodsInventory;
     }
 
@@ -379,11 +379,11 @@ public class BasicGoodsEntity {
 
     @Basic
     @Column(name = "GOODS_AREA")
-    public BigDecimal getGoodsArea() {
+    public Double getGoodsArea() {
         return goodsArea;
     }
 
-    public void setGoodsArea(BigDecimal goodsArea) {
+    public void setGoodsArea(Double goodsArea) {
         this.goodsArea = goodsArea;
     }
 
@@ -629,11 +629,11 @@ public class BasicGoodsEntity {
 
     @Basic
     @Column(name = "U_TIME")
-    public Timestamp getuTime() {
+    public Date getuTime() {
         return uTime;
     }
 
-    public void setuTime(Timestamp uTime) {
+    public void setuTime(Date uTime) {
         this.uTime = uTime;
     }
 
@@ -649,11 +649,11 @@ public class BasicGoodsEntity {
 
     @Basic
     @Column(name = "ADD_TIME")
-    public Timestamp getAddTime() {
+    public Date getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Timestamp addTime) {
+    public void setAddTime(Date addTime) {
         this.addTime = addTime;
     }
 
@@ -679,11 +679,11 @@ public class BasicGoodsEntity {
 
     @Basic
     @Column(name = "UPD_TIME")
-    public Timestamp getUpdTime() {
+    public Date getUpdTime() {
         return updTime;
     }
 
-    public void setUpdTime(Timestamp updTime) {
+    public void setUpdTime(Date updTime) {
         this.updTime = updTime;
     }
 

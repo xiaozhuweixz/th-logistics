@@ -2,8 +2,8 @@ package com.th.tms.controller;
 
 
 
-import com.th.tms.entity.TmsTransEntity;
-import com.th.tms.service.impl.TmsTransServiceImpl;
+import com.th.tms.entity.*;
+import com.th.tms.service.impl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,16 @@ public class TmsTransController {
     @Autowired
     private TmsTransServiceImpl tmsTransService;
 
-
+    @Autowired
+    BasicCarrierServiceImpl basicCarrierServiceImpl;
+    @Autowired
+    BasicCityServiceImpl basicCityServiceImpl;
+    @Autowired
+    BasicCustomerServiceImpl basicCustomerServiceImpl;
+    @Autowired
+    BasicTruckServiceImpl basicTruckServiceImpl;
+    @Autowired
+    BasicGoodsServiceImpl basicGoodsServiceImpl;
     /**
      * 新增运单
      * @param jsonObject
@@ -38,7 +47,7 @@ public class TmsTransController {
     @RequestMapping(path = "/delete_by_id", method = RequestMethod.GET)
     public Map deleteById(@RequestParam String id){
         Map<String, String> returnMap = tmsTransService.deleteById(id);
-        return null;
+        return returnMap;
     }
 
     /**
@@ -73,5 +82,49 @@ public class TmsTransController {
         return tmsTransEntityPage;
     }
 
+    /**
+     * 返回所有的承运商信息
+     * @return
+     */
+    @RequestMapping(path = "/find_all_basic_carrier", method = RequestMethod.POST)
+    public List<BasicCarrierEntity> findAllBasicCarrier(){
+        return basicCarrierServiceImpl.findAllBasicCarrier();
+    }
 
+    /**
+     * 返回所有的城市信息
+     * @return
+     */
+    @RequestMapping(path = "/find_all_basic_city", method = RequestMethod.POST)
+    public List<BasicCityEntity> findAllBasicCity(){
+        return basicCityServiceImpl.findAllBasicCity();
+    }
+
+
+    /**
+     * 返回所有委托客户信息
+     * @return
+     */
+    @RequestMapping(path = "/find_all_basic_cust", method = RequestMethod.POST)
+    public List<BasicCustomerEntity> findAllBasicCustomer(){
+        return basicCustomerServiceImpl.findAllBasicCustomer();
+    }
+
+    /**
+     * 返回所有车辆信息
+     * @return
+     */
+    @RequestMapping(path = "/find_all_basic_truck", method = RequestMethod.POST)
+    public List<BasicTruckEntity> findAllBasicTruck(){
+       return basicTruckServiceImpl.findAllBasicTruck();
+    }
+
+    /**
+     * 返回所有的物料信息
+     * @return
+     */
+    @RequestMapping(path = "/find_all_basic_goods", method = RequestMethod.POST)
+    public List<BasicGoodsEntity> findAllBasicGoods(){
+        return basicGoodsServiceImpl.findAllBasicGoods();
+    }
 }

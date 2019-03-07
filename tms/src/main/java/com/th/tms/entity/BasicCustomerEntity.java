@@ -1,7 +1,7 @@
 package com.th.tms.entity;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -18,13 +18,13 @@ public class BasicCustomerEntity {
     private String countType;
     private String custMemo;
     private String custAddMan;
-    private Timestamp custAddTime;
+    private Date custAddTime;
     private Integer custState;
     private String custPre;
     private Integer custIsPosition;
     private Integer custIsNotice;
     private Double custTarget;
-    private Timestamp uTime;
+    private Date uTime;
     private String custSign;
     private String custPassword;
     private Integer uDelete;
@@ -34,9 +34,6 @@ public class BasicCustomerEntity {
     private String custCode;
     private String goodsClass;
     private String custAvator;
-    private String custAppBackground;
-    private String dspCode;
-    private String dspName;
 
     @Id
     @Column(name = "CUST_ID")
@@ -150,11 +147,11 @@ public class BasicCustomerEntity {
 
     @Basic
     @Column(name = "CUST_ADD_TIME")
-    public Timestamp getCustAddTime() {
+    public Date getCustAddTime() {
         return custAddTime;
     }
 
-    public void setCustAddTime(Timestamp custAddTime) {
+    public void setCustAddTime(Date custAddTime) {
         this.custAddTime = custAddTime;
     }
 
@@ -210,11 +207,11 @@ public class BasicCustomerEntity {
 
     @Basic
     @Column(name = "U_TIME")
-    public Timestamp getuTime() {
+    public Date getuTime() {
         return uTime;
     }
 
-    public void setuTime(Timestamp uTime) {
+    public void setuTime(Date uTime) {
         this.uTime = uTime;
     }
 
@@ -308,35 +305,7 @@ public class BasicCustomerEntity {
         this.custAvator = custAvator;
     }
 
-    @Basic
-    @Column(name = "CUST_APP_BACKGROUND")
-    public String getCustAppBackground() {
-        return custAppBackground;
-    }
 
-    public void setCustAppBackground(String custAppBackground) {
-        this.custAppBackground = custAppBackground;
-    }
-
-    @Basic
-    @Column(name = "DSP_CODE")
-    public String getDspCode() {
-        return dspCode;
-    }
-
-    public void setDspCode(String dspCode) {
-        this.dspCode = dspCode;
-    }
-
-    @Basic
-    @Column(name = "DSP_NAME")
-    public String getDspName() {
-        return dspName;
-    }
-
-    public void setDspName(String dspName) {
-        this.dspName = dspName;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -369,14 +338,11 @@ public class BasicCustomerEntity {
                 Objects.equals(deptId, that.deptId) &&
                 Objects.equals(custCode, that.custCode) &&
                 Objects.equals(goodsClass, that.goodsClass) &&
-                Objects.equals(custAvator, that.custAvator) &&
-                Objects.equals(custAppBackground, that.custAppBackground) &&
-                Objects.equals(dspCode, that.dspCode) &&
-                Objects.equals(dspName, that.dspName);
+                Objects.equals(custAvator, that.custAvator);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(custId, custShortname, custName, custPhone, custFax, custAddress, custZip, orgId, countType, custMemo, custAddMan, custAddTime, custState, custPre, custIsPosition, custIsNotice, custTarget, uTime, custSign, custPassword, uDelete, custLoginName, comId, deptId, custCode, goodsClass, custAvator, custAppBackground, dspCode, dspName);
+        return Objects.hash(custId, custShortname, custName, custPhone, custFax, custAddress, custZip, orgId, countType, custMemo, custAddMan, custAddTime, custState, custPre, custIsPosition, custIsNotice, custTarget, uTime, custSign, custPassword, uDelete, custLoginName, comId, deptId, custCode, goodsClass, custAvator);
     }
 }

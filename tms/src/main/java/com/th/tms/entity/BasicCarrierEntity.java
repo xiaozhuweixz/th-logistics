@@ -1,7 +1,7 @@
 package com.th.tms.entity;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -33,19 +33,16 @@ public class BasicCarrierEntity {
     private String carrierText;
     private String addUserid;
     private String addName;
-    private Timestamp addDate;
-    private Timestamp uTime;
+    private Date addDate;
+    private Date uTime;
     private Integer uDelete;
-    private Timestamp updDate;
+    private Date updDate;
     private String updName;
     private Integer carrierState;
-    private String comId;
     private String carrierPassw;
     private String carrierRoadTransportPath;
     private String carrierLoginName;
     private String deptId;
-    private String dspCode;
-    private String dspName;
 
     @Id
     @Column(name = "CARRIER_ID")
@@ -309,21 +306,21 @@ public class BasicCarrierEntity {
 
     @Basic
     @Column(name = "ADD_DATE")
-    public Timestamp getAddDate() {
+    public Date getAddDate() {
         return addDate;
     }
 
-    public void setAddDate(Timestamp addDate) {
+    public void setAddDate(Date addDate) {
         this.addDate = addDate;
     }
 
     @Basic
     @Column(name = "U_TIME")
-    public Timestamp getuTime() {
+    public Date getuTime() {
         return uTime;
     }
 
-    public void setuTime(Timestamp uTime) {
+    public void setuTime(Date uTime) {
         this.uTime = uTime;
     }
 
@@ -339,11 +336,11 @@ public class BasicCarrierEntity {
 
     @Basic
     @Column(name = "UPD_DATE")
-    public Timestamp getUpdDate() {
+    public Date getUpdDate() {
         return updDate;
     }
 
-    public void setUpdDate(Timestamp updDate) {
+    public void setUpdDate(Date updDate) {
         this.updDate = updDate;
     }
 
@@ -367,15 +364,6 @@ public class BasicCarrierEntity {
         this.carrierState = carrierState;
     }
 
-    @Basic
-    @Column(name = "COM_ID")
-    public String getComId() {
-        return comId;
-    }
-
-    public void setComId(String comId) {
-        this.comId = comId;
-    }
 
     @Basic
     @Column(name = "CARRIER_PASSW")
@@ -417,26 +405,6 @@ public class BasicCarrierEntity {
         this.deptId = deptId;
     }
 
-    @Basic
-    @Column(name = "DSP_CODE")
-    public String getDspCode() {
-        return dspCode;
-    }
-
-    public void setDspCode(String dspCode) {
-        this.dspCode = dspCode;
-    }
-
-    @Basic
-    @Column(name = "DSP_NAME")
-    public String getDspName() {
-        return dspName;
-    }
-
-    public void setDspName(String dspName) {
-        this.dspName = dspName;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -474,17 +442,14 @@ public class BasicCarrierEntity {
                 Objects.equals(updDate, that.updDate) &&
                 Objects.equals(updName, that.updName) &&
                 Objects.equals(carrierState, that.carrierState) &&
-                Objects.equals(comId, that.comId) &&
                 Objects.equals(carrierPassw, that.carrierPassw) &&
                 Objects.equals(carrierRoadTransportPath, that.carrierRoadTransportPath) &&
                 Objects.equals(carrierLoginName, that.carrierLoginName) &&
-                Objects.equals(deptId, that.deptId) &&
-                Objects.equals(dspCode, that.dspCode) &&
-                Objects.equals(dspName, that.dspName);
+                Objects.equals(deptId, that.deptId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(carrierId, carrierName, carrierShortName, carrierEnName, carrierPy, carrierDesc, carrierAddress, carrierContactman, carrierMobile, carrierDuty, carrierTelphone, carrierMail, carrierBank, carrierBankno, carrierRegid, carrierRegidPath, carrierTax, carrierTaxPath, carrierLicence, carrierLicencePath, carrierLegalPerson, carrierUrl, carrierLogo, carrierText, addUserid, addName, addDate, uTime, uDelete, updDate, updName, carrierState, comId, carrierPassw, carrierRoadTransportPath, carrierLoginName, deptId, dspCode, dspName);
+        return Objects.hash(carrierId, carrierName, carrierShortName, carrierEnName, carrierPy, carrierDesc, carrierAddress, carrierContactman, carrierMobile, carrierDuty, carrierTelphone, carrierMail, carrierBank, carrierBankno, carrierRegid, carrierRegidPath, carrierTax, carrierTaxPath, carrierLicence, carrierLicencePath, carrierLegalPerson, carrierUrl, carrierLogo, carrierText, addUserid, addName, addDate, uTime, uDelete, updDate, updName, carrierState, carrierPassw, carrierRoadTransportPath, carrierLoginName, deptId);
     }
 }

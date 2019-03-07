@@ -29,8 +29,7 @@ public class TmsSignController {
     @RequestMapping("/saveSign")
     @ResponseBody
     public Map<String,String>  saveSign(@RequestBody JSONObject jsonObject){
-        Map<String,String> returnMap = new HashMap<>();
-        returnMap = tmsSignServiceImpl.saveSign(jsonObject);
+        Map<String,String> returnMap = tmsSignServiceImpl.saveSign(jsonObject);
         return returnMap;
     }
 

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 import net.sf.json.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 运单管理
@@ -131,4 +134,17 @@ public class TmsTransController {
     public List<BasicGoodsEntity> findAllBasicGoods(){
         return basicGoodsServiceImpl.findAllBasicGoods();
     }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/back_pic_upload", method = RequestMethod.POST)
+    public Map<String,String> getOrderDtl(@RequestParam(value = "files") MultipartFile files[], HttpServletRequest request, @RequestParam String signId){
+
+        //String path = request.getSession().getServletContext().getRealPath("/") + "/upload";
+        String path = "/Users/caixiaowei/Desktop";
+
+        return tmsTransService.getOrderDtl(files,path,signId);
+
+    }
+
 }

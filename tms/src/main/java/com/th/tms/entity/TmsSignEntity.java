@@ -28,7 +28,7 @@ public class TmsSignEntity {
     private String addUserid;
     private Date uTime;
     private Integer uDelete;
-
+    private String transPhotoPath;
     @Id
     @Column(name = "ID")
     public String getId() {
@@ -218,6 +218,14 @@ public class TmsSignEntity {
 
     public void setuDelete(Integer uDelete) {
         this.uDelete = uDelete;
+    }
+
+    public String getTransPhotoPath() {
+        return transPhotoPath;
+    }
+
+    public void setTransPhotoPath(String transPhotoPath) {
+        this.transPhotoPath = transPhotoPath;
     }
 
     @Override

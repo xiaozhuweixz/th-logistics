@@ -1,28 +1,32 @@
 package com.th.tms.service.impl;
 
+import com.th.tms.entity.TmsSignEntity;
 import com.th.tms.entity.TmsTransDetailedEntity;
 import com.th.tms.entity.TmsTransEntity;
+import com.th.tms.repository.TmsSignRepository;
 import com.th.tms.repository.TmsTransDetailedRepository;
 import com.th.tms.repository.TmsTransRepository;
 import com.th.tms.repository.impl.TmsTransRepositoryImpl;
 import com.th.tms.service.TmsTransService;
 import com.th.tms.util.BaseUtil;
+import com.th.tms.util.DateUtil;
 import com.th.tms.util.UUIDGenerator;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 @Component
 public class TmsTransServiceImpl implements TmsTransService {
 
@@ -32,7 +36,8 @@ public class TmsTransServiceImpl implements TmsTransService {
     TmsTransRepositoryImpl tmsTransRepositoryImpl;
     @Autowired
     TmsTransDetailedRepository tmsTransDetailedRepository;
-
+    @Autowired
+    TmsSignRepository tmsSignRepository;
 
     @Override
     @Transactional
@@ -148,6 +153,67 @@ public class TmsTransServiceImpl implements TmsTransService {
             returnMap.put("error","单据有问题不能进行修改。");
         }
 
+        return returnMap;
+    }
+
+
+    /**
+     * 回单上传
+     * @param files,path
+     * @param path
+     * @return
+     */
+    @Override
+    public Map<String, String> getOrderDtl(MultipartFile[] files, String path, String signId) {
+        Map<String,String> returnMap = new HashMap<>();
+        returnMap.put("suc","回单上传成功。");
+        String sqlPath = "";
+        File uploadDirectory = new File(path);
+        if (uploadDirectory.exists()) {
+            if (!uploadDirectory.isDirectory()) {
+                uploadDirectory.delete();
+            }
+        } else {
+            uploadDirectory.mkdir();
+        }
+        //这里可以支持多文件上传
+        if (files != null && files.length >= 1) {
+            BufferedOutputStream bw = null;
+            try {
+                for (MultipartFile file : files) {
+                    String fileName = file.getOriginalFilename();
+                    //判断是否有文件且是否为图片文件
+                    if(fileName!=null && !"".equalsIgnoreCase(fileName.trim()) && com.th.tms.util.FileUtils.isImageFile(fileName)) {
+                        String newPath = path + "/" + DateUtil.getLoctTimeToStr() + com.th.tms.util.FileUtils.getFileType(fileName);
+                        System.out.println("newPath:" + newPath);
+                        //创建输出文件对象
+                        File outFile = new File(newPath);
+                        //拷贝文件到输出文件对象
+                        FileUtils.copyInputStreamToFile(file.getInputStream(), outFile);
+                        sqlPath += newPath + ";";
+                    }
+                }
+                sqlPath = sqlPath.substring(0,sqlPath.length() - 1);
+                TmsSignEntity tmsSignEntity = tmsSignRepository.findOne(signId);
+                TmsTransEntity tmsTransEntity = tmsTransRepository.findOne(tmsSignEntity.getTransId());
+                tmsSignEntity.setTransPhotoPath(sqlPath);
+                tmsTransEntity.setTransPhotoPath(sqlPath);
+                tmsTransEntity.setTransState("回单已上传");
+                tmsSignEntity.setState("回单已上传");
+                tmsSignRepository.save(tmsSignEntity);
+                tmsTransRepository.save(tmsTransEntity);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (bw != null) {
+                        bw.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return returnMap;
     }
 

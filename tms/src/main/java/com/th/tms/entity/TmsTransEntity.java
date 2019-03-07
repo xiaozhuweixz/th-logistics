@@ -81,7 +81,7 @@ public class TmsTransEntity {
     private Date addDate;
     private String addName;
     private String addUserid;
-
+    private String transPhotoPath;
     @Id
     @Column(name = "ID")
     public String getId() {
@@ -820,6 +820,15 @@ public class TmsTransEntity {
 
     public void setAddUserid(String addUserid) {
         this.addUserid = addUserid;
+    }
+
+
+    public String getTransPhotoPath() {
+        return transPhotoPath;
+    }
+
+    public void setTransPhotoPath(String transPhotoPath) {
+        this.transPhotoPath = transPhotoPath;
     }
 
     @Override
